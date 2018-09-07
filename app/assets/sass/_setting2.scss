@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300i,400,400i,500,500i,600,600i,700,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900');
+ 
+$Raleway: 'Raleway', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+$h1: 3.6rem;
+$h2: 3rem;
+$h3: 1.6rem;
+$h4: 1.3rem;
+$h5: 1.2rem;
+
+$colorTop: #fff;
+$titleColor: #061e37; 
+$textColor: #d1d9dd;
+
+//$maxW: 1440px;
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    font-family: $Raleway;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+p {
+    line-height: 24px;
+}
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+%a {
+    text-decoration: none;
+}
+%wrapper {
+    //max-width: $maxW;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+}
+%button {
+    height: 55px;
+    //width: 35%;
+    font-family: $Roboto;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 5px 1rem #000;
+}
+%social {
+    margin: 30px auto 90px auto;
+    padding: 0;
+    height: 20px;
+    width: 35px;
+    display: inline-block;
+    background-image: url('../../Dart/img/socialicon.png');
+    background-repeat: no-repeat;
+}
