@@ -1,0 +1,51 @@
+@import 'font';
+@import 'var';
+@import 'mixin.scss';
+@import 'burger.scss';
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    max-height: 100%;
+    font-family: $Raleway;
+    width: 100vw;
+    
+}
+section {
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: $primary;
+}
+p {
+    line-height: 24px;
+}
+.btn {
+    @extend %button;
+}
+.btn-secondary {
+    background: $secondary;
+    color: $primary; 
+}
+.btn-accept {
+    background-color: $accept;
+    color: $primary
+}
+.logo {
+    @extend %flex;
+    max-height: 30px;
+    align-items: center;
+        p {
+            font-weight: 400;
+            line-height: 1rem;
+            display: inline-block;
+            margin: 0;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+        span{
+            font-weight: 800;
+        }
+}
