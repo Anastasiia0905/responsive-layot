@@ -14,7 +14,7 @@ html {
 .hero .wrapper {
     @extend %wrapper;
     position: relative;
-    margin-top: 20px;
+    //margin-top: 50px;
     overflow: hidden;
     min-height: 80vh;
 }
@@ -155,7 +155,7 @@ html {
  }
  .description-service {
     max-width: 580px;
-    margin: 100px auto;
+    margin: 0 auto;
     margin-bottom: 50px;
     text-align: center;
     h2{

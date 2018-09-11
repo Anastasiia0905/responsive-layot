@@ -12,6 +12,7 @@
     width: 80%;
     position: relative;
     margin: 0 auto;
+    padding-top: 50px;
 }
 %button {
     display: block;
@@ -22,6 +23,7 @@
     border: none;
     box-shadow: 0px 5px 1rem #000;
     background-color: $primary;
+    cursor: pointer;
 }
 
 %social {
@@ -32,4 +34,14 @@
     display: inline-block;
     background-image: url('../../Dart/img/socialicon.png');
     background-repeat: no-repeat;
+}
+@mixin btnColor($color){
+    background-color: $color;
+    &:hover {
+        background-color: transparentize($color, 0.2);
+    }
+    &:focus {
+        background-color: darken($color, 40%); 
+        outline: none;
+    }
 }

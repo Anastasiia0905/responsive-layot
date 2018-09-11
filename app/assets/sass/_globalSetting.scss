@@ -10,33 +10,46 @@ html, body{
     max-height: 100%;
     font-family: $Raleway;
     width: 100vw;
-    
 }
 section {
     position: relative;
 }
+
 a {
     text-decoration: none;
     color: $primary;
+}
+a:focus {
+    font-weight: 600;
+}
+a:hover, a:focus {
+    color: $secondary;
+    transition: all 0.5s linear;
+    border-color: $secondary;
 }
 p {
     line-height: 24px;
 }
 .btn {
     @extend %button;
+    @include btnColor($primary);
 }
 .btn-secondary {
-    background: $secondary;
+    @include btnColor($secondary);
     color: $primary; 
 }
 .btn-accept {
-    background-color: $accept;
+    @include btnColor($accept);
     color: $primary
+}
+.btn:hover, .btn-focus {
+    transition: all 1s ease-out;
 }
 .logo {
     @extend %flex;
     max-height: 30px;
     align-items: center;
+    cursor: pointer;
         p {
             font-weight: 400;
             line-height: 1rem;

@@ -15,7 +15,8 @@
 .hero .wrapper, .easy .wrapper, .service .wrapper, .testimonails .wrapper, .team .wrapper, .contact .wrapper, .footer .wrapper {
   width: 80%;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-top: 50px; }
 
 .btn {
   display: block;
@@ -26,7 +27,8 @@
   border: none;
   -webkit-box-shadow: 0px 5px 1rem #000;
           box-shadow: 0px 5px 1rem #000;
-  background-color: #fff; }
+  background-color: #fff;
+  cursor: pointer; }
 
 .socialNail0, .socialNail1, .socialNail2, .socialNail3, .socialNail4 {
   margin: 30px auto 90px auto;
@@ -93,22 +95,54 @@ a {
   text-decoration: none;
   color: #fff; }
 
+a:focus {
+  font-weight: 600; }
+
+a:hover, a:focus {
+  color: #061e37;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  border-color: #061e37; }
+
 p {
   line-height: 24px; }
 
+.btn {
+  background-color: #fff; }
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.8); }
+  .btn:focus {
+    background-color: #999999;
+    outline: none; }
+
 .btn-secondary {
-  background: #061e37;
+  background-color: #061e37;
   color: #fff; }
+  .btn-secondary:hover {
+    background-color: rgba(6, 30, 55, 0.8); }
+  .btn-secondary:focus {
+    background-color: black;
+    outline: none; }
 
 .btn-accept {
   background-color: #1de9b6;
   color: #fff; }
+  .btn-accept:hover {
+    background-color: rgba(29, 233, 182, 0.8); }
+  .btn-accept:focus {
+    background-color: #053529;
+    outline: none; }
+
+.btn:hover, .btn-focus {
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out; }
 
 .logo {
   max-height: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  cursor: pointer; }
   .logo p {
     font-weight: 400;
     line-height: 1rem;
@@ -132,7 +166,6 @@ html {
 
 .hero .wrapper {
   position: relative;
-  margin-top: 20px;
   overflow: hidden;
   min-height: 80vh; }
 
@@ -282,7 +315,7 @@ html {
 
 .description-service {
   max-width: 580px;
-  margin: 100px auto;
+  margin: 0 auto;
   margin-bottom: 50px;
   text-align: center; }
   .description-service h2 {
