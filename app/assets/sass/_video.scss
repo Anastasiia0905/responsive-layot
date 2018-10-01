@@ -1,0 +1,49 @@
+.video-container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+   overflow: hidden;
+ }
+ video {
+     width: 100%;
+     height: auto;
+     margin: 0;
+     padding: 0;
+ }
+ .controls {
+     position: absolute;
+     bottom: -40px;
+     width: 100%;
+     height: 40px;
+     background-color: rgba($gray, 0.8);
+     transition: all 0.3s ease-in; 
+ }
+ .controls.show {
+     bottom: 0;
+ }
+ .bar {
+     height: 5px;
+     width: 0;
+     background: $accept;
+ }
+ #play-stop {
+    background: none;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+ }
+ #play-stop::before {
+    color:#000;
+    content: "\f144"; 
+    font-size: 30px;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+ }
+ #play-stop.play::before{
+    content: "\f144";
+ }
+ #play-stop.stop::before{
+    content: "\f28b";
+ }

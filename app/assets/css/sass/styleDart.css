@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300i,400,400i,500,500i,600,600i,700,800");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,900");
-.logo, .header, .main-menu, .welcome, .tool, .toolItem, .count, .countBlock, .service .wrapper, .card-top, .card-down, .testimonails .wrapper, .feedBack, .comment, .teamPeople, .sub-form, .field-radio, .footer .wrapper, .logo-footer, .nav-footer, .link-social, .link-social ul {
+@import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
+.header, .main-menu, .logo, .welcome, .tool, .toolItem, .count, .countBlock, .service .wrapper, .card-top, .card-down, .testimonails .wrapper, .feedBack, .comment, .teamPeople, .sub-form, .field-radio, .footer .wrapper, .logo-footer, .nav-footer, .link-social, .link-social ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,13 +39,33 @@
   background-image: url("../../Dart/img/socialicon.png");
   background-repeat: no-repeat; }
 
+.header {
+  position: relative;
+  margin: 0 auto;
+  padding: 30px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.header.sticky {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 30px 10vw;
+  background: #1de9b6;
+  z-index: 2000; }
+
 .nav-toggle {
   margin-left: auto;
   padding: 2px;
   cursor: pointer;
   height: 3rem;
   width: 4rem;
-  z-index: 2; }
+  z-index: 200; }
 
 .nav-toggle:hover {
   opacity: 0.8; }
@@ -76,6 +97,118 @@
 
 .nav-toggle .nav-toggle-bar::after {
   margin-top: 1rem; }
+
+.nav-toggle.expanted .nav-toggle-bar {
+  background: transparent; }
+
+.nav-toggle.expanted .nav-toggle-bar::before,
+.nav-toggle.expanted .nav-toggle-bar::after {
+  background: white;
+  margin-top: 0; }
+
+.nav-toggle.expanted .nav-toggle-bar::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.nav-toggle.expanted .nav-toggle-bar::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+
+.main-menu {
+  color: #fff; }
+  .main-menu li {
+    margin-left: 50px; }
+
+body.expanted {
+  overflow-y: hidden; }
+
+.nav-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear; }
+
+.nav-menu.expanted {
+  top: 0;
+  opacity: 1;
+  background: #1de9b6;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+  z-index: 30;
+  overflow: hidden; }
+
+.nav-menu.expanted > .main-menu {
+  font-size: 3.6rem;
+  line-height: 2;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.video-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+video {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0; }
+
+.controls {
+  position: absolute;
+  bottom: -40px;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(133, 138, 146, 0.8);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in; }
+
+.controls.show {
+  bottom: 0; }
+
+.bar {
+  height: 5px;
+  width: 0;
+  background: #1de9b6; }
+
+#play-stop {
+  background: none;
+  outline: 0;
+  border: 0;
+  cursor: pointer; }
+
+#play-stop::before {
+  color: #000;
+  content: "\f144";
+  font-size: 30px;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit; }
+
+#play-stop.play::before {
+  content: "\f144"; }
+
+#play-stop.stop::before {
+  content: "\f28b"; }
 
 html, body {
   margin: 0;
@@ -168,18 +301,12 @@ html {
   overflow: hidden;
   min-height: 80vh; }
 
-.header {
-  position: relative;
-  margin: 0 auto;
-  padding: 30px 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+.main-menu {
+  color: #fff; }
+  .main-menu li {
+    margin-left: 50px; }
 
-.main-menu, .nav-button {
+.nav-button {
   display: none; }
 
 .nav-button {
@@ -188,11 +315,6 @@ html {
   color: #fff;
   border: 1px solid #fff;
   border-radius: 5px; }
-
-.main-menu {
-  color: #fff; }
-  .main-menu li {
-    margin-left: 50px; }
 
 .welcome {
   margin: 1.8rem auto;
@@ -218,9 +340,8 @@ html {
     width: 55%;
     margin: 30px auto; }
 
-.video {
-  display: none;
-  height: 100%; }
+.video-container {
+  display: none; }
 
 /*-------------EASY SECTION-----------*/
 .easy .wrapper {
@@ -565,11 +686,14 @@ html {
     display: flex; }
     .describition-button .btn {
       width: 35%; }
-  .video {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%; }
+  .video-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
   .easy .wrapper {
     width: 65%; }
     .easy .wrapper .btn-accept {
@@ -654,18 +778,15 @@ html {
     font-size: 15px; }
   .nav-toggle {
     display: none; }
+  .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    opacity: 1; }
   .main-menu, .nav-button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
-  .header.sticky {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    padding: 30px 10vw;
-    background: #1de9b6;
-    z-index: 2000; }
   .welcome {
     text-align: left;
     margin: 10% auto;
@@ -677,13 +798,11 @@ html {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
-    .welcome .describition, .welcome .video {
+    .welcome .describition, .welcome .video-container {
       max-width: 45%;
       margin: 0; }
     .welcome .btn {
       margin: 0 30px 0 0; }
-  .video img {
-    width: 100%; }
   .tool {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;

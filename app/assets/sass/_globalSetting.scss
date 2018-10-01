@@ -1,7 +1,12 @@
 @import 'font';
 @import 'var';
 @import 'mixin.scss';
-@import 'burger.scss';
+@import 'navMenu/header.scss';
+@import 'navMenu/burger.scss';
+@import 'navMenu/menu.scss';
+@import 'navMenu/navExpanted.scss';
+@import 'video.scss';
+
 html, body{
     margin: 0;
     padding: 0;

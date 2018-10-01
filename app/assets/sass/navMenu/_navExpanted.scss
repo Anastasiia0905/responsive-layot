@@ -1,0 +1,31 @@
+body.expanted {
+    overflow-y: hidden;
+}
+.nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+.nav-menu.expanted {
+    top: 0;
+    opacity: 1;
+    background: $accept;
+    transition: opacity 0.5s linear;
+    z-index: 30;
+    overflow: hidden;
+}
+.nav-menu.expanted > .main-menu {
+    font-size: $h1;
+    line-height: 2;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-50%) translateX(-50%);
+    align-items: center;
+}

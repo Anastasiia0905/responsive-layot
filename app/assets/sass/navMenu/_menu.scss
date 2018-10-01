@@ -1,0 +1,8 @@
+
+    .main-menu {
+        @extend %ul, %flex;
+        color: $primary;
+            li {
+                margin-left: 50px;
+            } 
+    }

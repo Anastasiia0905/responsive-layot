@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="../css/sass/styleDart.css" rel='stylesheet'>
     <title>Dart</title>
 </head>
 <body>
-    <section class="hero">
+    <section id="hero" class="hero">
         <div class="wrapper">
             <header class="header">
                 <div class="logo">
@@ -20,10 +21,10 @@
                 <div class="nav-toggle">
                     <div class="nav-toggle-bar"></div>
                 </div>
-                <nav>
+                <nav class="nav-menu">
                     <ul class="main-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Service</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#easy">Service</a></li>
                         <li><a href="#">Extension</a></li>
                         <li><a href="#">Pricing</a></li>
                         <li><a href="#">Help</a></li>
@@ -40,13 +41,23 @@
                         <button class="btn">try for free</button>
                     </div>
                 </div>
-                <div class="video">
-                    <img src="img/video.png" alt="">
+                <div class="video-container">
+                    <div class="video-bg">
+                        <video class="video" src="img/video.mp4"></video>
+                    </div>
+                    <div class="controls">
+                        <div class="controls-bar">
+                            <div class="bar"></div>
+                        </div>
+                        <div class="control-button">
+                            <button id="play-stop"></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="easy">
+    <section id="easy" class="easy">
         <div class="wrapper">
             <div class="about-description">
                 <h2>Easy &amp; Useful</h2>
