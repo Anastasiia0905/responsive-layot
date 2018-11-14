@@ -14,18 +14,24 @@ function stickyHeader(){
 /*----------------BURGER-------------*/
 let humburger = {
     navToggle: document.querySelector('.nav-toggle'),
-	navMenu: document.querySelector('.nav-menu'),
+    navMenu: document.querySelector('.nav-menu'),
+    mainMenu: document.querySelector('.main-menu'),
 	body: document.querySelector('body'),
     onToggle: function(e){
-        e.preventDefault();
         this.navToggle.classList.toggle('expanted');
 		this.navMenu.classList.toggle('expanted');
-		this.body.classList.toggle('expanted');
+        this.body.classList.toggle('expanted');
     }
 };
 humburger.navToggle.addEventListener('click', function(e){
+    e.preventDefault();
     humburger.onToggle(e);
 });
+humburger.mainMenu.addEventListener('click', (e)=>{
+    humburger.onToggle(e);
+})
+/*-----------------MENU------------------*/
+
 
 /*-----------------VIDEO------------------*/
 let videoplayer = {
@@ -67,3 +73,65 @@ videoplayer.video.addEventListener("timeupdate", function(){
         videoplayer.cntrButton.classList.add('play');
     }
 });
+
+/*-----------------ACCORDION-------------*/
+let cardContainer = document.querySelector(".cards-section");
+let cardTop = document.querySelectorAll('.card__top');
+let cardDown = document.querySelectorAll('.card__down');
+
+cardContainer.addEventListener('click', function(e){
+    let target = e.target;
+    for(let i = 0; i < cardTop.length; i++){
+        if(target != cardTop[i]){
+            cardDown[i].classList.remove('show');
+        }
+        if(target == cardTop[i]){
+            cardDown[i].classList.toggle('show');
+        }
+    }
+   
+});
+
+
+/*---------------CAROUSEL-------------------*/
+let feedBackBlock = document.querySelectorAll('.feedBack__block');
+let arrowUp = document.querySelector('.arrowUp');
+let arrowDown = document.querySelector('.arrowDown');
+let currentFeedBackBlock = 0;
+
+let reset = () => {
+    for(let i = 0; i < feedBackBlock.length; i++){
+        feedBackBlock[i].style.display = 'none';
+    }
+}
+let showFeedBack = () => {
+    reset();
+    feedBackBlock[currentFeedBackBlock].style.display = 'block';
+    
+}
+let slideUp = () => {
+    reset();
+    feedBackBlock[currentFeedBackBlock-1].style.display = "block";
+    currentFeedBackBlock --;
+}
+let slideDown = () => {
+    reset();
+    feedBackBlock[currentFeedBackBlock+1].style.display = 'block';
+    currentFeedBackBlock ++;
+}
+arrowUp.addEventListener('click', () => {
+    if(currentFeedBackBlock === 0){
+        currentFeedBackBlock = feedBackBlock.length;
+    }
+    slideUp();
+});
+arrowDown.addEventListener('click', () => {
+    if(currentFeedBackBlock == feedBackBlock -1){
+        currentFeedBackBlock -1;
+    };
+    if(currentFeedBackBlock+1 == feedBackBlock.length){
+        currentFeedBackBlock = -1;
+    }
+    slideDown();
+});
+showFeedBack();

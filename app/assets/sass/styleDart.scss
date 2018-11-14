@@ -151,38 +151,6 @@ html {
         color: $lighter;
     }
  }
-.cards-section {
-    margin: 0 auto;
-    max-width: 800px;
-}
-.card {
-    margin-bottom: 20px;
-    padding: 20px 25px;
-    border-radius: 5px;
-    box-shadow: 1px 7px 10px  rgba(0,0, 0, 0.3);
-}
-.card-top {
-    @extend %flex;
-    align-items: center;
-        p {
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        .icon {
-            margin-right: 25px;
-        }
-        .arrow {
-            margin-left: auto;
-        }
-    }
-.card-down {
-    @extend %flex; 
-}         
-.service-img {
-    margin: 0 auto;
-    width: 100%;
-    max-height: 155px;
-}            
 /*----  TESTOMNAILS SECTION -----*/       
  .testimonails {
      background: url('../../Dart/img/testimonailsBG.png') center center no-repeat;
@@ -193,7 +161,7 @@ html {
     @extend %flex;
     padding: 30px 0;
 }    
-.description-testimonails {
+.testimonails_desc {
     position: relative;
     margin: 0 auto;
     text-align: center;
@@ -207,54 +175,8 @@ html {
         width: 160px;
     }
 }
-.feedBack {
-    @extend %flex;
-    position: relative;
-    margin: 60px auto;
-    justify-content: flex-end;
-}
-.feedBack .arrow {
-    font-size: 30px;
-    position: absolute;
-    right: 48%;
-    cursor: pointer;
-    transform: translateY(-50%);
-    color: $primary;
-}
-.feedBack .arrow.arrowUp {
-    top: -30px;
-}
-.feedBack .arrow.arrowDown {
-    bottom: -30px;
-    transform: rotate(180deg);
-}
-.comment {
-    @extend %flex;
-    margin-bottom: 50px;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-}
-.customAvatar {
-    display: none;
-}
-.commentText {
-    width: 100%;
-    max-width: 650px;
-    padding: 20px;
-    border: 1px solid $border;
-    border-radius: 5px;
-    background-color: $primary;
-    h5 {
-        margin: 0;
-    }
-    p {
-        margin: 0;
-        color: $lighter;
-        font-style: italic;
-    }
-}
 /*------------TEAM SECTION----------*/
- .team .wrapper  {
+.team  .wrapper{
     @extend %wrapper;
     margin: 0 auto;
     text-align: center;
@@ -263,62 +185,51 @@ html {
         margin-bottom: 20px;
         color: $secondary;
     }
-}
-.teamPeople {
-    @extend %flex;
-     margin: 0 auto;
-     h5 {
-         font-size: $h5;
-     }
-}            
+} 
+
+
+
+/* 
 .teamAvatar {
     margin: 2em 0;
 }
 .avatarPhoto {
     width: 90%;
     max-width: 90vh;
-}
-@for $i from 0 to 5 {
-    .socialNail#{$i}{
-       @extend %social;
-        $length: -44px*$i;
-        background-position: $length 0;
-    }
-}
+}*/
+
+
 /*-------------CONTACT SECTION----------*/
 .contact .wrapper {
     @extend %wrapper;
-    padding: 10% 0;
-    text-align: center;
-    color: $secondary;
-    h2 {
-        font-size: $h2;
-    }
+    padding: 0;
+    border: 1px solid red;
 }
-.sub-form {
-    @extend %flex;
-    flex-direction: column;
-    justify-content: space-between;
-    .btn {
-        margin: 10% auto;
-        width: 55%;  
-    }
-}
+
+            /*      .sub-form {
+                @extend %flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .btn {
+                    margin: 10% auto;
+                    width: 55%;  
+                }
+            }
 .field-wrap {
-    width: 100%;
+            width: 100%;
     label {
         position: absolute;
         padding: 20px;
         font-size: 14px;
     }
-    input, textarea{
-        width: 100%;
-        height: 50px;
-        margin-bottom: 20px;
-        border: 1px solid $dark;
-        border-radius: 5px;
-        background-color: transparent;
-    }
+                        input, textarea{
+                            width: 100%;
+                            height: 50px;
+                            margin-bottom: 20px;
+                            border: 1px solid $dark;
+                            border-radius: 5px;
+                            background-color: transparent;
+                        }
 }
 .field-radio {
     @extend %flex;
@@ -346,7 +257,7 @@ html {
 .field-radio input:checked ~ .check {
    background: url('../../Dart/img/checked.png') center center no-repeat;
    background-size: 25px;
-}
+}*/
     
  /*---------------FOOTER SECTION----------*/
  .footer {
@@ -415,47 +326,25 @@ html {
         width: 35%;
     }
 }
-/*--- card ---*/
-.card-down {
-    justify-content: space-between;
-    .service-img {
-        max-width: 45%;
-        height: 100%;
-        margin: 0;
-        align-self: center;
-     }
-     .txtDown {
-         max-width: 45%;
-     } 
-}   
-.customAvatar {
-    align-self: center;
-    display: block;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;    
-} 
 
-.teamPeople {
-    height: 40vh;
-    justify-content: center;
-    position: relative;
-}
+
+
+/*
 .teamAvatar {
-    width: 100px;
-    height: auto;
-    margin-left: 20px;
-    align-self: center;
-    filter: blur(2px) grayscale(50%);
+                        width: 100px;
+                        height: auto;
+                        margin-left: 20px;
+                        align-self: center;
+                        filter: blur(2px) grayscale(50%);
     .team-text, .social {
         display: none;
     }
 }
 
 .teamAvatar.active {
-    height: auto;
-    width: auto;
-    filter: blur(0) grayscale(0);
+                            height: auto;
+                            width: auto;
+                            filter: blur(0) grayscale(0);
     .avatarPhoto {
         height: 160px;
         width: 160px;
@@ -474,12 +363,12 @@ html {
         content: ' ';
         clear: both;
     }
-}
+}*/
             
          
      
      section.contact {
-         .wrapper {
+         /*.wrapper {
              .sub-form {
                  flex-direction: row;
                  .field-wrap {
@@ -494,7 +383,7 @@ html {
                      width: 35%;
                  }
              }
-         }
+         }*/
      }
      footer.footer {
          .wrapper {
@@ -559,7 +448,7 @@ html {
 .cards-section {
     width: 800px;
 }
-.description-testimonails, .feedBack {
+.testimonails_desc, .feedBack {
     width: 45%;
     .btn {
         display: inline;
