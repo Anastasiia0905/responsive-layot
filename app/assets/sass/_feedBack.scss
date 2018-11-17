@@ -1,0 +1,54 @@
+.feedBack{
+    @extend %flex;
+    position: relative;
+    margin: 60px auto;
+    justify-content: flex-end;
+    
+    &__block {
+        @extend %flex;
+        margin-bottom: 50px;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+    &__avatar {
+        display: none;
+        @media screen and (min-width: 767px){
+            align-self: center;
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto; 
+        }
+    }
+    &__text {
+        width: 100%;
+        max-width: 650px;
+        padding: 20px;
+        border: 1px solid $border;
+        border-radius: 5px;
+        background-color: white;
+        h5 {
+            margin: 0;
+        }
+        p {
+            margin: 0;
+            color: $lighter;
+            font-style: italic;
+        }
+    }
+    &__arrow {
+        font-size: 30px;
+        position: absolute;
+        right: 48%;
+        cursor: pointer;
+        transform: translateY(-50%);
+        color: $primary;
+    }
+    &__arrow.arrowUp {
+        top: -30px;
+    }
+    &__arrow.arrowDown {
+        bottom: -30px;
+        transform: rotate(180deg);
+    }
+}
